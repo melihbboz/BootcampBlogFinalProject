@@ -9,7 +9,7 @@
 
     <div class=col-md-6>
 
-        <form asp-action="Update" method="post" asp-controller="Posts">
+        <form asp-action="Update" method="post" asp-controller="Posts" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Title"></label>
@@ -17,11 +17,21 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
+             <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
 
             <div class="form-group">
                 <label asp-for="Body"></label>
                 <input asp-for="Body" class="form-control" />
                 <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <img src="~/img/@Model.ImagePath" width="120" />
+                <input type="file" name="file" id="file" class="form-control" />
+                <span asp-validation-for="ImagePath" class="text-danger"></span>
             </div>
 
 

@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model Post
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+
+            <div class="card mt-2">
+                <div class="card-header">
+                    @Model.Title
+                </div>
+                <img src="~/img/@Model.ImagePath"  class="card-img-top" alt="card image cap">
+
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Title</h5>
+                    <p class="card-text">@Model.Description</p>
+                    <p class="card-text">@Model.Body</p>
+
+
+                </div>
+
+                
+            </div>
+            <div class="col-md-3">
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -4,6 +4,7 @@ using BlogProject.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogProject.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220830155418_addedPostDescription")]
+    partial class addedPostDescription
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,9 +108,7 @@ namespace BlogProject.Repository.Migrations
                             Id = 1,
                             Body = "Blog Body 1",
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2022, 8, 30, 19, 7, 47, 700, DateTimeKind.Local).AddTicks(6243),
-                            Description = "Blog Description",
-                            ImagePath = "1.jpg",
+                            CreatedDate = new DateTime(2022, 8, 30, 18, 54, 18, 527, DateTimeKind.Local).AddTicks(7453),
                             Title = "Blog Title 1"
                         },
                         new
@@ -116,9 +116,7 @@ namespace BlogProject.Repository.Migrations
                             Id = 2,
                             Body = "Blog Body 2",
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2022, 8, 30, 19, 7, 47, 700, DateTimeKind.Local).AddTicks(6253),
-                            Description = "Blog Description",
-                            ImagePath = "2.jpg",
+                            CreatedDate = new DateTime(2022, 8, 30, 18, 54, 18, 527, DateTimeKind.Local).AddTicks(7463),
                             Title = "Blog Title 2"
                         },
                         new
@@ -126,9 +124,7 @@ namespace BlogProject.Repository.Migrations
                             Id = 3,
                             Body = "Blog Body 3",
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 8, 30, 19, 7, 47, 700, DateTimeKind.Local).AddTicks(6253),
-                            Description = "Blog Description",
-                            ImagePath = "3.jpg",
+                            CreatedDate = new DateTime(2022, 8, 30, 18, 54, 18, 527, DateTimeKind.Local).AddTicks(7464),
                             Title = "Blog Title 3"
                         },
                         new
@@ -136,9 +132,7 @@ namespace BlogProject.Repository.Migrations
                             Id = 4,
                             Body = "Blog Body 4",
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2022, 8, 30, 19, 7, 47, 700, DateTimeKind.Local).AddTicks(6254),
-                            Description = "Blog Description",
-                            ImagePath = "4.jpg",
+                            CreatedDate = new DateTime(2022, 8, 30, 18, 54, 18, 527, DateTimeKind.Local).AddTicks(7464),
                             Title = "Blog Title 4"
                         });
                 });

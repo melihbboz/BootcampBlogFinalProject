@@ -1,15 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+
 @model List<PostWithCategoryViewModel>
+<h1>Posts List</h1>
 <a class="btn btn-primary" asp-controller="Posts" asp-action="Save">Create Post</a>
 <table class="table table-striped">
     <thead>
         <tr>
             <td>Id</td>
+            <td>Image</td>
             <td>Title</td>
+            <td>Description</td>
             <td>Body</td>
-            <td>ImagePath</td>
             <td>Category</td>
             <td>CreatedDate</td>
             <td>Actions</td>
@@ -20,10 +23,12 @@
         @foreach (var item in Model)
         {
             <tr>
+
                 <td>@item.Id</td>
+                <td><img src="~/img/@item.ImagePath" width="100" /></td>
                 <td>@item.Title</td>
+                <td>@item.Description</td>
                 <td>@item.Body</td>
-                <td>@item.ImagePath</td>
                 <td>@item.Category.Name</td>
                 <td>@item.CreatedDate</td>
                 <td>
@@ -32,10 +37,5 @@
                 </td>
             </tr>
         }
-
-    </tbody>
-
-
-
 </table>
-
+    </tbody>

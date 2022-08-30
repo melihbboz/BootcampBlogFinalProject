@@ -39,6 +39,7 @@ namespace BlogProject.Web.Controllers
 
             if (ModelState.IsValid)
             {
+              
                 await _services.AddAsync(_mapper.Map<Post>(postViewModel));
                 return RedirectToAction(nameof(Index));
             }
@@ -58,10 +59,17 @@ namespace BlogProject.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(PostViewModel postViewModel)
+        public async Task<IActionResult> Update(PostViewModel postViewModel, IFormFile file)
         {
             if (ModelState.IsValid)
             {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", file.FileName);
+                using (var stream= new FileStream(path, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+                postViewModel.ImagePath = file.FileName;
+
                 await _services.UpdateAsync(_mapper.Map<Post>(postViewModel));
                 return RedirectToAction(nameof(Index));
             }

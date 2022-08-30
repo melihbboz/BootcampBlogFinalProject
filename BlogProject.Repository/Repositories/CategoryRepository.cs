@@ -18,5 +18,6 @@ namespace BlogProject.Repository.Repositories
         {
             return await _context.Categories.Include(x => x.Posts).Where(x => x.Id == categoryId).SingleOrDefaultAsync();
         }
+
     }
 }

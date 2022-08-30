@@ -1,33 +1,40 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model IEnumerable<Post>
 
-<div class="container"> 
-        <div class="row">
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                        The current link item
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-                    <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
-                </div>
-            </div>
-            <div class="col-md-9">
-            <div class="card">
+<div class="jumbotron jumbotron-fluid bg-secondary text-white rounded">
+    <div class="container">
+        <h1 class="display-4">Merhaba</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+           @await Component.InvokeAsync("CategoryMenu")
+        </div>
+        <div class="col-md-9">
+            @foreach (var item in Model)
+            {
+                <div class="card mt-2">
                 <div class="card-header">
-                    Featured
+                    @item.Title
                 </div>
-                <img src="..." class="card-img-top" alt="...">
+                <img src="~/img/@item.ImagePath" class="card-img-top" alt="card image cap" >
 
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">@item.Description</h5>
+                    
+                    <a href="https://localhost:7004/home/details/@item.Id" class="btn btn-primary">Tümünü Oku</a>
                 </div>
             </div>
-        </div>
+           }
+            
         </div>
     </div>
+</div>
+

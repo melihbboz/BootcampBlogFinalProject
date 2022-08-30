@@ -19,7 +19,9 @@ namespace BlogProject.Repository.Seeds
                 Id=1,
                 CategoryId=1,
                 Title="Blog Title 1",
+                Description="Blog Description",
                 Body="Blog Body 1",
+                ImagePath="1.jpg",
                 CreatedDate=DateTime.Now
             },
             new Post
@@ -27,7 +29,9 @@ namespace BlogProject.Repository.Seeds
                 Id = 2,
                 CategoryId = 2,
                 Title = "Blog Title 2",
+                Description = "Blog Description",
                 Body = "Blog Body 2",
+                ImagePath = "2.jpg",
                 CreatedDate = DateTime.Now
             },
             new Post
@@ -35,7 +39,9 @@ namespace BlogProject.Repository.Seeds
                 Id = 3,
                 CategoryId = 3,
                 Title = "Blog Title 3",
+                Description = "Blog Description",
                 Body = "Blog Body 3",
+                ImagePath = "3.jpg",
                 CreatedDate = DateTime.Now
             },
             new Post
@@ -43,7 +49,9 @@ namespace BlogProject.Repository.Seeds
                 Id = 4,
                 CategoryId = 3,
                 Title = "Blog Title 4",
+                Description = "Blog Description",
                 Body = "Blog Body 4",
+                ImagePath = "4.jpg",
                 CreatedDate = DateTime.Now
             });
         }

@@ -1,0 +1,28 @@
+﻿using BlogProject.Core.UnitOfWorks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BlogProject.Repository.UnitOfWorks
+{
+    public class UnitOfWork : IUnitOfWork
+    {
+        private readonly AppDbContext _context;
+        public UnitOfWork(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public void commit()
+        {
+            _context.SaveChanges();
+        }
+
+        public async Task CommitAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+    }
+}
